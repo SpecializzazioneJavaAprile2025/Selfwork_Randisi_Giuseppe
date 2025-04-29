@@ -1,9 +1,3 @@
-- Creare un programma che controlla se un numero e' pari o dispari
-
-- Creare un programma che calcoli la media dei numeri interi (pari e dispari) poi media dei pari e media dei dispari
-
-- Creare un programma che stampi solo gli elementi in posizione pari di un array
-
 - Creare un programma che stampi l'elemento maggiore in un array
 
 - Creare un programma che chiede un numero all'utente per poi dichiarare un array con lunghezza pari al numero inserito.Successivamente riempire l'array chiedendo quali numeri inserire all'utente per poi calcolarne la sommatoria

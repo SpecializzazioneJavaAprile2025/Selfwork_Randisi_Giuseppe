@@ -1,13 +1,6 @@
-- Creare un programma che chiede un numero all'utente per poi dichiarare un array con lunghezza pari al numero inserito.Successivamente riempire l'array chiedendo quali numeri inserire all'utente per poi calcolarne la sommatoria
-
-
 
 EXTRA(se ci riuscite)
 
-- Fizzbuzz (con le stesse regole dell'hackademy)
-
 - Convertire in java l'esercizio della password visto in hackademy
-
-- Controllare se una stringa e' palindroma
 
 - Creare un programma che controlla se ci sono due vocali ripetute consecutivamente in una stringa

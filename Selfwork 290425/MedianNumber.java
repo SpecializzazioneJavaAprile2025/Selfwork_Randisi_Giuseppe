@@ -46,6 +46,6 @@ public class MedianNumber {
     System.out.println("Media di Tutti i numeri: " + medianAll);
     System.out.println("Media di Tutti i numeri Pari: " + medianEven);
     System.out.println("Media di Tutti i numeri: " + medianOdd);
-    
+    scanner.close();
     }
 }

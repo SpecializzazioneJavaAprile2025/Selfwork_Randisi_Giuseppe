@@ -28,6 +28,6 @@ public class AskUser {
     System.out.println("L'Array ha lunghezza: " +  howMany);
     System.out.println("I numei Inseriti Sono Stati: " + numbersaArray);
     System.out.println("La loro somma è uguale a: " + sumAll);
-    
+    scanner.close();
     }
 }

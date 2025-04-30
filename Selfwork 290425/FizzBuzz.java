@@ -22,7 +22,7 @@ public class FizzBuzz {
                 System.out.println(i);
             };        
         }
-    
+        scanner.close();
     }
 }
 

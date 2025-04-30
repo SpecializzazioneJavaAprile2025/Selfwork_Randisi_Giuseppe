@@ -16,6 +16,7 @@ public class Palindrome {
 
         System.out.println("la tua frase è:" + phrase_start);
         System.out.println("la tua frase al contrario è:" + phrase_reverse);
-        System.out.println("La tua Frase è Palindroma? :" + phrase_start.equals(phrase_reverse));  
+        System.out.println("La tua Frase è Palindroma? :" + phrase_start.equals(phrase_reverse));
+        scanner.close();  
     }
 }

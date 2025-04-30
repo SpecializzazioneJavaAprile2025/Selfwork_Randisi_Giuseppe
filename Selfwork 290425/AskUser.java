@@ -1,14 +1,13 @@
 import java.util.Scanner;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
-public class BiggerNumber {
+public class AskUser {
 
     public static void main(String[] args) {
     
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Quanti Numeri Vuoi Usare? ");
+        System.out.println("Indicami la lunghezza dell'Array ");
         int howMany = scanner.nextInt();
 
         int[] numbers = new int[howMany];
@@ -17,16 +16,18 @@ public class BiggerNumber {
             System.out.println("Inserisci un numero: ");
             numbers[i] = scanner.nextInt();
         }
-        
         String numbersaArray = Arrays.toString(numbers);
-        int max = Arrays.stream(numbers).max().getAsInt();
+        int sumAll = 0;
         
-   
+        for (int i = 0; i < numbers.length; i++){
+            int num = numbers[i];
+            sumAll += num;
+    }
 
-        System.out.println("I numei Inseriti Sono Stati: " + numbersaArray);
-        System.out.println("Il numero pià grande è: " + max);
-        
-    scanner.close();
 
+    System.out.println("L'Array ha lunghezza: " +  howMany);
+    System.out.println("I numei Inseriti Sono Stati: " + numbersaArray);
+    System.out.println("La loro somma è uguale a: " + sumAll);
+    
     }
 }

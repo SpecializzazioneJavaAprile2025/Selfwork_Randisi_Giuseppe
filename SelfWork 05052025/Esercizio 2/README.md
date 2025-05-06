@@ -16,3 +16,36 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 ## Dependency Management
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
+
+## Traccia Esercizio 2
+
+creare una classe Restaurant
+
+    attributi
+        - name
+        - dishes → Array di oggetti di classe Dish
+        - drinks → Array di oggetti di classe Drink
+
+    metodi
+        - stampamenu → Ciclare prima i piatti stampando nome e prezzo, poi ripetere la stessa
+        - cosa con i drink
+
+creare una classe Dish con
+
+    attributi
+        nome
+        prezzo
+        ( opzionale ) ingredienti
+
+    metodi
+        getter e setter
+
+creare una classe Drink con
+
+    attributi
+        nome
+        prezzo
+   
+    metodi
+        getter e setter

@@ -4,7 +4,7 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        /*4- chiedete all’utente quale persona vuole modificare, chiedete i dati e aggiornate quell’elemento della lista*/
+       
 
         List<Person> persons = new ArrayList<Person>();
         

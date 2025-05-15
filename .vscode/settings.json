@@ -2,8 +2,9 @@
     "java.debug.settings.onBuildFailureProceed": true,
     "java.project.sourcePaths": [
         "Selfwork 290425",
+        "SelfWork 07052025/src/Esercizio6",
         "SelfWork 07052025/src/Esercizio5/Esercizio5",
         "SelfWork 07052025/src/Esercizio4",
-        "SelfWork 07052025/src/Esercizio6"
+        "SelfWork 07052025/src/Esercizio8/src"
     ]
 }

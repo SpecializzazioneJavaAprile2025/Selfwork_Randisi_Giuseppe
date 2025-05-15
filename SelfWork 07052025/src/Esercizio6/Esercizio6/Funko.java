@@ -48,8 +48,7 @@ public class Funko {
         if (obj == null || getClass() != obj.getClass()) return false;
         Funko funko = (Funko) obj;
 
-    return Objects.equals(name, funko.name) &&
-           Objects.equals(series, funko.series);
+        return Objects.equals(name, funko.name) &&  Objects.equals(series, funko.series);
         }       
 
     @Override

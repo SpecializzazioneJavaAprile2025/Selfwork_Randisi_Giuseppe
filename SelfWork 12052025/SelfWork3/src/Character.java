@@ -45,7 +45,7 @@ public class Character {
             .filter(predicate::filter)
             .peek(c -> System.out.println(c.getName() + " - " + c.getType() + " - " + c.getRace()))
             .count();
-            //Serve per chiudere .peek()
+            //Serve per chiudere .peek() che ha bisogno di un metodo termianle ome un forEach o per l'appunto count();
             System.out.println("Totale trovati: " + count); 
         //Per poi stamparlo    
     } 

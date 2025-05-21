@@ -44,6 +44,7 @@ public class App {
         //Character.filterAndPrintCharacter(characters, c -> c.getType() == Type.MAGE, Type.MAGE);
         //Character.filterAndPrintCharacter(characters, c -> c.getType() == Type.ARCHER, Type.ARCHER);
         //Character.filterAndPrintCharacter(characters, c -> c.getType() == Type.KNIGHT, Type.KNIGHT);
-
+        //Si lo so, non è elegante passare due volte la stessa cosa (il Type); ma idealmente nel form di ricerca seleziono il form una volta, incapsulo nella variabile e la passo due volte per mantere la interface generica
+        
         }
 }

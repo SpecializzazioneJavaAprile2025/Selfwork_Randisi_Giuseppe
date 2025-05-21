@@ -4,4 +4,4 @@ Ho separato i diversi esercizi per rivedere i concetti della programmazione funz
 Saranno divisi per cartella e concetti.
 Selfwork1 - Conversione da stile imperativo a funzionale
 Selfwork2 - Uso delle Functional Interfaces
-Selfwork3 - Refactoring con Lambda
+Selfwork3 - Ricreazione di cosa fatto in Lezione

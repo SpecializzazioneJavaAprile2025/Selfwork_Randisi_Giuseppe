@@ -36,10 +36,17 @@ public class Character {
         this.race = race;
     }
     
-    public static void filterAndPrintCharacter (List<Character> charaters, CharacterPredicateInterface predicate) {
-        charaters.stream()
+    public static void filterAndPrintCharacter (List<Character> characters, CharacterPredicateInterface predicate, Type type) {
+
+        System.out.println("Stampa di Ogni: " + type + " e rispettiva Razza");
+        System.out.println("--------");
+        long count = characters.stream()
+        //Suggerimento di ChatGpt: Incapsulare su variabile count di tipo long l'estratto dello stream
             .filter(predicate::filter)
-            .map(Character::getName)
-            .forEach(System.out::println);  
-    }
+            .peek(c -> System.out.println(c.getName() + " - " + c.getType() + " - " + c.getRace()))
+            .count();
+            //Serve per chiudere .peek()
+            System.out.println("Totale trovati: " + count); 
+        //Per poi stamparlo    
+    } 
 }

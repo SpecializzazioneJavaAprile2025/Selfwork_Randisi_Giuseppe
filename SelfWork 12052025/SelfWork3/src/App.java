@@ -3,7 +3,7 @@ import java.util.List;
 public class App {
     public static void main(String[] args) throws Exception {
     
-    List<Character> charaters = List.of(
+    List<Character> characters = List.of(
 
             new Character("Geralt", Type.WITCHER, Race.HUMAN),
             new Character("Jennefer", Type.ASSASSIN, Race.HUMAN),
@@ -36,8 +36,14 @@ public class App {
             new Character("Ra'zirr", Type.ASSASSIN, Race.KHAJIIT),
             new Character("M'aiq the Liar", Type.MAGE, Race.KHAJIIT)
 
+            );
             
             //ordiniamo e stampiamo le varie Liste usando alcuni filtri per tipologia
-            );
+            //Non li uso tutti senno famo notte
+            
+        //Character.filterAndPrintCharacter(characters, c -> c.getType() == Type.MAGE, Type.MAGE);
+        //Character.filterAndPrintCharacter(characters, c -> c.getType() == Type.ARCHER, Type.ARCHER);
+        //Character.filterAndPrintCharacter(characters, c -> c.getType() == Type.KNIGHT, Type.KNIGHT);
+
         }
 }

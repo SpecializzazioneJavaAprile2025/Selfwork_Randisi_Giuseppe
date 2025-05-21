@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Character {
 
     private String name;
@@ -34,4 +36,10 @@ public class Character {
         this.race = race;
     }
     
+    public static void filterAndPrintCharacter (List<Character> charaters, CharacterPredicateInterface predicate) {
+        charaters.stream()
+            .filter(predicate::filter)
+            .map(Character::getName)
+            .forEach(System.out::println);  
+    }
 }

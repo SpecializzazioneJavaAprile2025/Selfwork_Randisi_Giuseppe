@@ -1,0 +1,31 @@
+insert into products (name, price, description) values
+('Product 1', 100, 'Description 1'), ('Product 2', 200, 'Description 2'),
+('Product 3', 300, 'Description 3'), ('Product 4', 400, 'Description 4'),
+('Product 5', 500, 'Description 5'), ('Product 6', 600, 'Description 6'),
+('Product 7', 700, 'Description 7'), ('Product 8', 800, 'Description 8'),
+('Product 9', 900, 'Description 9'), ('Product 10', 1000, 'Description 10');
+
+insert into variants (product_id, attribute, value) values
+(1, 'Color', 'Red'),
+(1, 'Size', 'Small'),
+(1, 'Size', 'Medium'),
+(1, 'Size', 'Large'),
+(2, 'Color', 'Blue'),
+(2, 'Size', 'Small'),
+(2, 'Size', 'Medium'),
+(2, 'Size', 'Large'),
+(3, 'Color', 'Green'),
+(3, 'Size', 'Small'),
+(3, 'Size', 'Medium'),
+(3, 'Size', 'Large'),
+(4, 'Color', 'Yellow'),
+(4, 'Size', 'Small'),
+(4, 'Size', 'Medium'),
+(4, 'Size', 'Large'),
+(5, 'Color', 'Orange'),
+(5, 'Size', 'Small'),
+(5, 'Size', 'Medium'),
+(5, 'Size', 'Large'),
+(6, 'Color', 'Purple'),
+(6, 'Size', 'Small'),
+(6, 'Size', 'Medium');

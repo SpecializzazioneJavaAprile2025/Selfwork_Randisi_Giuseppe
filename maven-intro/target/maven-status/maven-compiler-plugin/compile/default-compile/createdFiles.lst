@@ -1,0 +1,10 @@
+it\aulab\services\JeegService.class
+it\aulab\models\Leg.class
+it\aulab\App.class
+it\aulab\models\Arm.class
+it\aulab\models\Jeeg.class
+it\aulab\services\JeegServiceImpl.class
+it\aulab\repositories\JeegRepositoryImp.class
+it\aulab\Side.class
+it\aulab\AppConfig.class
+it\aulab\repositories\JeegRepository.class

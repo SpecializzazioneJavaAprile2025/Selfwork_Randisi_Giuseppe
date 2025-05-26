@@ -41,9 +41,10 @@ class ProgettoSpringApplicationTests {
 		//Salviamo nel database tutto un nuovo Author
 		}
 
-	//@Test
-	// void contextLoads() {
-	// }
+	@Test
+	void contextLoads() {
+	}
+
 	@Test
 	void findByName(){
 		assertThat(authorRepository.findByName("Pippo"))
@@ -52,7 +53,8 @@ class ProgettoSpringApplicationTests {
 		//Estrai la proprietà Name 
 		.containsOnly("Pippo");
 		//Esso contiene solo "Pippo". Quindi non ritonra name = Pippo ma solo Pippo
-	}
+		};
+
 	@Test
 	void authorsWithNamesNotNative(){
 		assertThat(authorRepository.authorsWithNamesNotNative())
@@ -67,4 +69,4 @@ class ProgettoSpringApplicationTests {
 		.containsOnly("Pippo");
 	};
 }
-//Prova a risolvere test falliti
+

@@ -29,13 +29,13 @@ public interface AuthorRepository extends CrudRepository<Author, Long>{
     //Query Nativa
     //Scritta normale in SQL
     //FROM authors a = Richiami un alias di authors dichiarandolo a; Dopo scrivi semplicemente a per richiamare authors
-    @Query(value =" SELECT * FROM authors a WHERE a.firstname = 'Franco'", nativeQuery = true)
+    @Query(value =" SELECT * FROM authors a WHERE a.firstname = 'Pippo'", nativeQuery = true)
     List<Author> authorsWithNames();
 
 
     //Query NON NATIVA con OOP
     //Passiamo l'oggetto ed il nome presente nel model
-    @Query("SELECT a FROM Author a WHERE a.name ='Luigi'")
+    @Query("SELECT a FROM Author a WHERE a.name ='Pippo'")
     //Volendo Possiamo anche passargli degli elementi dinamici al posto del value direttamente noi. Esempio = Value di ritorno da un form o da una barra di ricerca testuale
     List<Author> authorsWithNamesNotNative();
 

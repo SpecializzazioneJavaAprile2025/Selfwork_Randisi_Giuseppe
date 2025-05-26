@@ -7,21 +7,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import it.aulab.progetto_spring.models.Author;
-import it.aulab.progetto_spring.repositories.AuthorRepository;
+import it.aulab.progetto_spring.models.Comment;
+import it.aulab.progetto_spring.repositories.CommentRepository;
 
 //Ogni model VUOLE IL SUO CONTROLLER
 //Qui metti i metodi/Handler = Gestori
 @Controller 
-public class AuthorController{
+public class CommentController{
 
         @Autowired
-        AuthorRepository authorRepository;
+        CommentRepository commentRepository;
 
 
-    @RequestMapping(value ="/authors", method = RequestMethod.GET)
-    public @ResponseBody List<Author> getAllAuthors(){
-        return authorRepository.findAll();
-        //Loop Infinito in chiamata. Continua da minuto 1.18
+    @RequestMapping(value ="/comment", method = RequestMethod.GET)
+    public @ResponseBody List<Comment> getAllComments(){
+        return commentRepository.findAll();
     }
 }

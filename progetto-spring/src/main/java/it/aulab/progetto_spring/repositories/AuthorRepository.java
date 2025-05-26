@@ -4,10 +4,13 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.ListCrudRepository;
 
 import it.aulab.progetto_spring.models.Author;
 
-public interface AuthorRepository extends CrudRepository<Author, Long>{
+public interface AuthorRepository extends ListCrudRepository<Author, Long>{
+    //Impostiamo a ListCrud per ottenere una lista in ritorno dal Crud
+    //Best Practice: Fai Sempre una ListCrud
 
     //findBy = Query WHERE
 

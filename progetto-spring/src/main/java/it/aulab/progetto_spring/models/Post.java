@@ -3,6 +3,8 @@ package it.aulab.progetto_spring.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,6 +17,9 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name= "posts")
+//@JsonIgnoreProperties({"author"})
+//Quando crei il JSON da mandare come API, Ignora la proprietà AUTHOR nella chiamata
+//Poco Utile; Fai due chiamate al Server
 public class Post {
 
     @Id
@@ -35,10 +40,13 @@ public class Post {
     @ManyToOne
     @JoinColumn(name = "author_id")
     //Annotazione per indicare concatenazione tra le due tabelle
+    @JsonIgnoreProperties({"posts"})
+    //Meglio fare sulla proprietà
     private Author author;
     //Object Injection. Faccio il collegamento con tabella author e la rispettiva tabella
     
     @OneToMany(mappedBy = "post")
+    @JsonIgnoreProperties({"post"})
     private List<Comment> comments = new ArrayList<Comment>();
 
     

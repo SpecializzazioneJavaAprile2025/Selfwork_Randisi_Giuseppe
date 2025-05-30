@@ -13,13 +13,14 @@ import it.aulab.progetto_spring.repositories.PostRepositorty;
 //Ogni model VUOLE IL SUO CONTROLLER
 //Qui metti i metodi/Handler = Gestori
 @Controller 
+@RequestMapping("/posts")
 public class PostController{
 
         @Autowired
         PostRepositorty postRepository;
 
 
-    @RequestMapping(value ="/post", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody List<Post> getAllPosts(){
         return postRepository.findAll();
     }

@@ -3,6 +3,8 @@ package it.aulab.progetto_spring.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,7 +16,13 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="authors")  //Senza questo, la tabella che il framework cerca nel database è author 
-                        //(come il nome della classe)
+//(come il nome della classe)
+//@JsonIgnoreProperties({"id"}) 
+  //Ignora L'id Quando chiami Author.
+    //Ricorda che però fare questo sulla classe non è il massimo per la deserializzazione del dato 
+        //Serializzare = Da Oggetto a JSON
+        //DESerializzare = da JSON ad Oggetto
+
     public class Author {
 
         @Id
@@ -34,6 +42,7 @@ import jakarta.persistence.Table;
 
         @OneToMany(mappedBy = "author")
         //mappedBy = "Mappalo per/Traccia la relazione grazie ad attributo author"
+        @JsonIgnoreProperties({"author"})
         private List<Post> posts = new ArrayList<Post>();
         //Per evitare il ritorno di NULL, se Posts dovesse ritornare null
         //Quanto meno a default diamo un valore come Lista di Array POST ma Vuota

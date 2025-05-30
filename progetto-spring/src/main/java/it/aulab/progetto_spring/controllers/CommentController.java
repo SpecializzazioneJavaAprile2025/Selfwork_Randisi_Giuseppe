@@ -1,7 +1,6 @@
 package it.aulab.progetto_spring.controllers;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,13 +12,14 @@ import it.aulab.progetto_spring.repositories.CommentRepository;
 //Ogni model VUOLE IL SUO CONTROLLER
 //Qui metti i metodi/Handler = Gestori
 @Controller 
+@RequestMapping("/comments")
 public class CommentController{
 
         @Autowired
         CommentRepository commentRepository;
 
 
-    @RequestMapping(value ="/comment", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody List<Comment> getAllComments(){
         return commentRepository.findAll();
     }

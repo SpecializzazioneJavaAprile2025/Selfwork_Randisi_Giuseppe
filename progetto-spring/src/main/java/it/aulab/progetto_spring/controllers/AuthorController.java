@@ -18,71 +18,44 @@ import it.aulab.progetto_spring.models.Author;
 import it.aulab.progetto_spring.models.Post;
 import it.aulab.progetto_spring.repositories.AuthorRepository;
 
-//Ogni model VUOLE IL SUO CONTROLLER
-//Qui metti i metodi/Handler = Gestori
-//@Controller; In quanto ora Abbiamo un REST CONTROLLER (Ritorniamo TUTTI I DATI) usiamo un'annotazione specifica
 @RestController
-//In quanto RestController è sicuro che ritorni un RESPONSEBODY.
-@ RequestMapping("/authors")
-//Eliminiamo il value su Requestmapping e chiamo ogni metodo su unico URI
- //Chiama il metodo ed il metodo in base alla richiesta fatta all'uri
-public class AuthorController{
+@RequestMapping("/authors")
+public class AuthorController {
 
-        @Autowired
-        AuthorRepository authorRepository;
+    @Autowired
+    AuthorRepository authorRepository;
 
-
-    //@RequestMapping(value ="/authors", method = RequestMethod.GET) Value non è più necessario; Hai passato il REQUEST MAPPING Sopra
-    
-    //public @ResponseBody List<Author> getAllAuthors(){ Eliminiamo l'annotazione RepsonseBody; non Serve più
-    
-    //@RequestMapping(method = RequestMethod.GET) Ma non c'è più bisogno di un RequestMapping. Hai un'annotazione specifica
-    
     @GetMapping
-      public List<Author> getAllAuthors(){
-        return authorRepository.findAll();    
-    }
-    
-    //Rotta parametrica
-    //@RequestMapping(value="/{id}" , method = RequestMethod.GET)
-    //public @ResponseBody Author geAuthor(@PathVariable("id") Long id){
-    @GetMapping("{id}")
-    public Author geAuthor(@PathVariable("id") Long id){
-        return authorRepository.findById(id).get();
-        //findById 
-         //Restituisce un optional (Volendo potrebbe tornare un NULL). Quindi nel caso non trova, OPTIONAL Torna OGGETTO VUOTO
-          //Se esiste, e quindi ritorna un OPTIONAL "PIENO", fai .get() per restituire un'oggetto.
+    public List<Author> getAllAuthors() {
+        return authorRepository.findAll();
     }
 
-    //Handle per Creazione AUTHOR
+    @GetMapping("{id}")
+    public Author geAuthor(@PathVariable("id") Long id) {
+        return authorRepository.findById(id).get();
+    }
+
     @PostMapping
-    public Author createAuthor(@RequestBody Author author){
-        //RequestBody = Comunica all'handler che i dati del nuovo oggetto saranno dentro un JSON
+    public Author createAuthor(@RequestBody Author author) {
         return authorRepository.save(author);
     }
 
     @PutMapping("{id}")
-    public Author updateAuthor(@PathVariable("id") Long id, @RequestBody Author author){
-        author.setId(id); //Setti l'id dell'autore da modificare. L'oggetto author in arrivo non ha id
+    public Author updateAuthor(@PathVariable("id") Long id, @RequestBody Author author) {
+        author.setId(id);
         return authorRepository.save(author);
     }
 
     @DeleteMapping("{id}")
-    public void deleteAuthor(@PathVariable("id") Long id){
-        if(authorRepository.existsById(id)){
-            //authorRepository.deleteById(id); //Se c'è l'id (Se esiste), cancellalo per id.
-                //Occhio che questo metodo non va bene per i vincoli di Integrità
+    public void deleteAuthor(@PathVariable("id") Long id) {
+        if (authorRepository.existsById(id)) {
             Author author = authorRepository.findById(id).get();
             List<Post> authorPosts = author.getPosts();
-            for(Post post: authorPosts){
+            for (Post post : authorPosts) {
                 post.setAuthor(null);
-                //Implementiamo il fatto che se esistono dei vincoli a post
-                //Mando i post in una lista, la ciclo con foreach
-                //Setto tutti gli author a null mentre ciclo
             }
-                authorRepository.deleteById(id);
-                //a questo punto faccio delete
-            }else{
+            authorRepository.deleteById(id);
+        } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Author not Found");
         }
     }

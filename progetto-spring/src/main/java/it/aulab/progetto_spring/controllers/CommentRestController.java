@@ -19,8 +19,8 @@ import it.aulab.progetto_spring.repositories.CommentRepository;
 //Ogni model VUOLE IL SUO CONTROLLER
 //Qui metti i metodi/Handler = Gestori
 @RestController
-@RequestMapping("/comments")
-public class CommentController{
+@RequestMapping("/api/comments")
+public class CommentRestController{
 
         @Autowired
         CommentRepository commentRepository;

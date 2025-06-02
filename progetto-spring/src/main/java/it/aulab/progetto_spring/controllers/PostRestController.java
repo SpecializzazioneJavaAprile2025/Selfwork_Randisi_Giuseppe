@@ -12,19 +12,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.server.ResponseStatusException;
 
-import it.aulab.progetto_spring.models.Comment;
 import it.aulab.progetto_spring.models.Post;
 import it.aulab.progetto_spring.repositories.PostRepositorty;
 
 //Ogni model VUOLE IL SUO CONTROLLER
 //Qui metti i metodi/Handler = Gestori
 @Controller 
-@RequestMapping("/posts")
-public class PostController{
+@RequestMapping("/api/posts")
+public class PostRestController{
 
         @Autowired
         PostRepositorty postRepository;

@@ -18,12 +18,13 @@ import it.aulab.progetto_spring.models.Author;
 import it.aulab.progetto_spring.models.Post;
 import it.aulab.progetto_spring.repositories.AuthorRepository;
 
+Il nome non è stato modificato ma stiamo parlando di un RESTCONTROLLER
 //Ogni model VUOLE IL SUO CONTROLLER
 //Qui metti i metodi/Handler = Gestori
 //@Controller; In quanto ora Abbiamo un REST CONTROLLER (Ritorniamo TUTTI I DATI) usiamo un'annotazione specifica
 @RestController
 //In quanto RestController è sicuro che ritorni un RESPONSEBODY.
-@ RequestMapping("/authors")
+@ RequestMapping("/api/authors")
 //Eliminiamo il value su Requestmapping e chiamo ogni metodo su unico URI
  //Chiama il metodo ed il metodo in base alla richiesta fatta all'uri
 public class AuthorController{

@@ -28,6 +28,8 @@ public interface AuthorRepository extends ListCrudRepository<Author, Long>{
     //Se nel modello scrivevamo solo name e lastname, diventava findByNameAndLastname
     //Es. = List<Author> findByNameAndSurname(String franco, String rossi) diventa select all from Author where firstname = franco and surname = rossi
     
+    List<Author> findByEmail(String email);
+
     //Query Nativa
     //Scritta normale in SQL
     //FROM authors a = Richiami un alias di authors dichiarandolo a; Dopo scrivi semplicemente a per richiamare authors

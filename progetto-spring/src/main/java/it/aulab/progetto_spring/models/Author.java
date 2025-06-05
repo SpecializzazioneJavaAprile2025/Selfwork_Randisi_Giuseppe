@@ -1,5 +1,6 @@
 package it.aulab.progetto_spring.models;
 
+import java.beans.Transient;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,4 +92,10 @@ import jakarta.persistence.Table;
         public void setPosts(List<Post> posts) {
             this.posts = posts;
         }
+
+        @Transient
+        public String getFullname(){
+            return name +" "+surname;
+        }
+
     }   
